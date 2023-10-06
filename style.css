@@ -1,1 +1,49 @@
+h1 {
+  font-size: 50px;
+  font-weight: 400;
+  color: #f8f8ff;
+}
 
+h2, h3, h4, h5 {
+  color: #f8f8ff;
+}
+
+body {
+  background-color: #97A6A4;
+}
+
+#cityDetail,
+#uvIndexColor,
+li {
+  color: #4D4F53;
+}
+
+#weather-content {
+  display: none;
+}
+
+.navbar {
+  height: 150px;
+}
+
+#searchResults,
+#cityDetail,
+.card {
+  background-color: #5A6C73;
+}
+
+#searchResults {
+  height: 100vh;
+}
+
+#fiveDay .card {
+  border: 2px solid white;
+}
+
+#searchList li {
+  background-color: #97A6A4;
+}
+
+p {
+  color: #D9B779;
+}
