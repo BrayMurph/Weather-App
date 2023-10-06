@@ -105,7 +105,7 @@ function fiveday(lat, lon) {
             if (!searchList.includes(city)) {
                 searchList.push(city);
                 searchedCity = $(`
-                    <li class="list-item">${city}</li>
+                    <li class="list-group-item">${city}</li>
                     `);
                 $("#searchHistory").append(searchedCity);
             };
@@ -119,7 +119,7 @@ function fiveday(lat, lon) {
         });
 
         $(document).ready(function() {
-            var searchArr = JSON.parse(localStorage.getItem(city));
+            var searchArr = JSON.parse(localStorage.getItem("city"));
 
             if (searchArr !== null) {
                 var lastSearched = searchArr.length - 1;
