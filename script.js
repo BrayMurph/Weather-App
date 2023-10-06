@@ -3,7 +3,7 @@ var today = moment().format("L");
 var searchList = [];
 
 function currentCond(city) {
-    var queryURL = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=imperial&appid=${apikey}`;
+    var queryURL = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=imperial&APPID=${apikey}`;
     
     $.ajax({
       url: queryURL,
@@ -27,7 +27,7 @@ function currentCond(city) {
 
           var lat = cityWeatherRes.coord.lat;
           var lon = cityWeatherRes.coord.lon;
-          var uviqueryURL = `https://api.openweathermap.org/data/2.5/uvi?lat=${lat}&lon=${lon}&appid=${apikey}`;
+          var uviqueryURL = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&exlclude={part}&APPID=${apikey}`;
 
         $.ajax({
             url: uviqueryURL,
@@ -59,8 +59,8 @@ function currentCond(city) {
     });
 }
 
-function fiveday(lat, lon) {
-    var fivedayURL = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&units=imperial&exclude=current,minutely,hourly,alerts&appid=${apikey}`;
+function fiveday(city) {
+    var fivedayURL = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&units=imperial&appid=${apikey}`;
 
     $.ajax({
         url: fivedayURL,
