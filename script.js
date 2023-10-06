@@ -1,9 +1,8 @@
-var apikey = "";
 var today = moment().format("L");
 var searchList = [];
 
 function currentCond(city) {
-    var queryURL = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=imperial&appid=${apiKey}`;
+    var queryURL = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=imperial&APPID=b82beadaf2428e27794315f09f4f6b24`;
     
     $.ajax({
       url: queryURL,
@@ -27,7 +26,7 @@ function currentCond(city) {
 
           var lat = cityWeatherRes.coord.lat;
           var lon = cityWeatherRes.coord.lon;
-          var uviqueryURL = `https://api.openweathermap.org/data/2.5/uvi?lat=${lat}&lon=${lon}&appid=${apiKey}`;
+          var uviqueryURL = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&exlclude={part}&APPID=b82beadaf2428e27794315f09f4f6b24`;
 
         $.ajax({
             url: uviqueryURL,
@@ -60,7 +59,7 @@ function currentCond(city) {
 }
 
 function fiveday(lat, lon) {
-    var fivedayURL = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&units=imperial&exclude=current,minutely,hourly,alerts&appid=${apiKey}`;
+    var fivedayURL = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&units=imperial&appid=b82beadaf2428e27794315f09f4f6b24`;
 
     $.ajax({
         url: fivedayURL,
